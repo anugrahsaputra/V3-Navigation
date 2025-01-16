@@ -67,6 +67,28 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+               /* Teks Berjalan */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+         }
     </style>
 </head>
 <body>
