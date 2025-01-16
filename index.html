@@ -67,8 +67,7 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-
-        /* Teks Berjalan */
+               /* Teks Berjalan */
         .marquee-container {
             width: 100%;
             overflow: hidden;
@@ -80,8 +79,8 @@
         .marquee-text {
             display: inline-block;
             white-space: nowrap;
-            animation: marquee 10s linear infinite;
-        }
+            animation: marquee 5s linear infinite;
+       }
 
         @keyframes marquee {
             0% {
@@ -90,7 +89,7 @@
             100% {
                 transform: translateX(-100%);
             }
-        }
+        }      
     </style>
 </head>
 <body>
@@ -124,4 +123,26 @@
         </section>
 
         <section id="berita">
-            <h2>Berita Ter
+            <h2>Berita Terbaru</h2>
+            <p>Simak berita terbaru tentang kegiatan dan prestasi sekolah kami.</p>
+        </section>
+
+        <section id="kontak">
+            <h2>Kontak Kami</h2>
+            <p>Alamat: Jalan Traa No. 123, Kota Bogor</p>
+            <p>Email: info@sekolahcontoh.sch.id</p>
+            <p>Telepon: (021) 123-4567</p>
+        </section>
+    </main>
+
+       <!-- Teks Berjalan di Footer -->
+    <footer>
+        <div class="marquee-container">
+            <div class="marquee-text">
+                Selamat datang di website MTs Darul Ulum! Kami menyediakan informasi tentang sekolah, kegiatan, dan prestasi siswa kami.
+            </div>
+        </div>
+        <p>&copy; 2025 MTs Darul Ulum - Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
