@@ -1,47 +1,41 @@
-// Fungsi untuk menambahkan efek fade-in pada elemen dengan kelas tertentu
-function fadeInElement(element, duration) {
-    element.style.opacity = 0;
-    element.style.transition = `opacity ${duration}s ease-in-out`;
-    element.style.opacity = 1;
+// Fungsi untuk membuka atau menutup menu saat ikon menu (hamburger) diklik
+function toggleMenu() {
+    var menuList = document.getElementById("menu-list");
+    var menuIcon = document.querySelector(".menu-icon");
+
+    // Periksa apakah menu terbuka atau tertutup
+    if (menuList.style.display === "block") {
+        menuList.style.display = "none"; // Menutup menu
+    } else {
+        menuList.style.display = "block"; // Membuka menu
+    }
 }
 
-// Menambahkan animasi fade-in ke setiap bagian ketika halaman dimuat
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        // Menambahkan sedikit delay agar animasi bergantian
-        setTimeout(() => {
-            fadeInElement(section, 1);
-        }, index * 300); // Delay per bagian
+// Fungsi untuk menambahkan efek fade-in ke elemen dengan kelas 'fade-in-left' atau 'fade-in-right'
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeInElements = document.querySelectorAll('.fade-in-left, .fade-in-right');
+
+    fadeInElements.forEach(function(element) {
+        element.classList.add('fade-in'); // Menambahkan kelas untuk memulai animasi
     });
 });
 
-// Menu toggle untuk tampilan responsif
-function toggleMenu() {
-    const menuList = document.getElementById('menu-list');
-    menuList.classList.toggle('active');
+// Fungsi untuk menambahkan animasi fade-in pada elemen
+function fadeInElement(element) {
+    element.style.opacity = 0; // Set opacity ke 0 untuk memulai animasi
+    element.style.transition = "opacity 1.5s ease-in"; // Menambahkan transisi
+
+    // Menunggu hingga elemen siap, kemudian ubah opacity menjadi 1
+    setTimeout(function() {
+        element.style.opacity = 1;
+    }, 100); // Sedikit delay untuk memulai animasi setelah elemen terlihat
 }
 
-// Menambahkan animasi ke carousel gambar
-let currentIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide img');
-const totalSlides = slides.length;
+// Fungsi untuk menambahkan efek fade-in ke elemen dengan kelas 'fade-in-left' atau 'fade-in-right'
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeInElements = document.querySelectorAll('.fade-in-left, .fade-in-right');
 
-function changeSlide() {
-    const carouselSlide = document.querySelector('.carousel-slide');
-    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-    carouselSlide.style.transform = `translateX(-${currentIndex * 220}px)`; // Menyesuaikan lebar gambar
-}
-
-// Fungsi untuk memulai carousel
-function startCarousel() {
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        changeSlide();
-    }, 3000); // Ganti gambar setiap 3 detik
-}
-
-// Mulai carousel setelah halaman dimuat
-document.addEventListener('DOMContentLoaded', function() {
-    startCarousel();
+    fadeInElements.forEach(function(element) {
+        fadeInElement(element); // Memicu animasi fade-in pada setiap elemen
+    });
 });
