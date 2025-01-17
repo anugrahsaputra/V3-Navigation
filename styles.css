@@ -7,10 +7,34 @@ body {
 }
 
 header {
-    background: #0000FF;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1E90FF; /* Warna background */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.school-info h1 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.slogan {
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
 }
 
 header h1 {
