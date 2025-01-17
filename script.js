@@ -42,3 +42,21 @@ document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(element => {
     element.classList.add('visible');
 });
 
+// Fungsi untuk menambahkan kelas fade-in-right saat elemen terlihat
+const elements = document.querySelectorAll('.fade-in-right');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-right');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5 // Elemen akan dikenali ketika 50% terlihat
+});
+
+// Menambahkan observer ke semua elemen
+elements.forEach(element => {
+    observer.observe(element);
+});
