@@ -7,11 +7,9 @@ body {
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #1E90FF; /* Warna background */
+  background-color: white; /* Mengatur latar belakang menjadi putih */
+  color: black; /* Mengatur warna teks menjadi hitam (untuk kontras dengan latar belakang putih) */
+  padding: 20px; /* Memberikan jarak di sekitar header */
 }
 
 .logo-container {
