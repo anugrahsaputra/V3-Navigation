@@ -1,61 +1,21 @@
 // script.js
-// JavaScript untuk Toggle Menu Hamburger
+// Fungsi untuk toggle menu (seperti sebelumnya)
 function toggleMenu() {
-    const navbar = document.getElementById('navbar');
+    var navbar = document.getElementById('navbar');
     navbar.classList.toggle('active');
 }
 
-/* Styling untuk bagian Ekstrakurikuler */
-#ekstrakurikuler {
-    margin: 20px 0;
+// Carousel otomatis dan navigasi
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-slide img');
+const totalImages = images.length;
+
+function changeImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-#ekstrakurikuler ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
+document.querySelector('.carousel-container').addEventListener('click', changeImage);
 
-/* Styling untuk Carousel Foto */
-#carousel {
-    margin: 20px 0;
-}
-
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.carousel-container:before, .carousel-container:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-container:before {
-    left: 10px;
-}
-
-.carousel-container:after {
-    right: 10px; 
-}
-
+// Mulai carousel otomatis
+setInterval(changeImage, 3000);  // Ganti gambar setiap 3 detik
