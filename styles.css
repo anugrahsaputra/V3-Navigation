@@ -127,3 +127,8 @@ nav ul li {
 #kontak {
     padding-top: 20px;
 }
+
+.separator {
+    border-top: 2px solid #000;  /* Menambahkan garis pemisah */
+    margin: 20px 0;  /* Memberikan jarak atas dan bawah */
+}
