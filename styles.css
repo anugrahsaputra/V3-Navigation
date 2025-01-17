@@ -320,3 +320,51 @@ header {
     line-height: 1.5;
 }
 
+/* Style untuk menu */
+#navbar {
+    position: relative;
+    background-color: #333;
+    padding: 10px;
+    color: white;
+}
+
+/* Tampilkan menu di kiri secara vertikal */
+#menu-list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #444;
+    width: 200px;
+    height: 100vh; /* Tampilkan sepanjang tinggi layar */
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+#menu-list li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #555;
+}
+
+#menu-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Gaya tombol menu */
+.menu-icon {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Ketika menu dibuka, tampilkan menu */
+#menu-list.show {
+    display: block;
+}
+
