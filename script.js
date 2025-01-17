@@ -71,3 +71,14 @@ elements.forEach(element => {
         });
     });
 </script>
+
+<script>
+    // Ambil elemen menu icon dan menu list
+    const menuIcon = document.querySelector('.menu-icon');
+    const menuList = document.querySelector('#menu-list');
+
+    // Ketika menu icon diklik, toggle kelas 'show' pada menu list
+    menuIcon.addEventListener('click', () => {
+        menuList.classList.toggle('show');
+    });
+</script>
