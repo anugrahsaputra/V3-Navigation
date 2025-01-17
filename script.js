@@ -28,3 +28,12 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, options);
 
 sections.forEach(section => observer.observe(section));
+
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const nav = document.querySelector('nav');
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('active'); // Menambah/menghapus kelas "active"
+    });
+</script>
