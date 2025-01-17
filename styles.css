@@ -136,3 +136,32 @@ section {
 footer {
     background-color: #333;
     color: white
+}
+
+/* Animasi marquee */
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(100%); /* Mulai di luar kanan */
+    }
+    100% {
+        transform: translateX(-100%); /* Pindah ke luar kiri */
+    }
+}
+
+/* Marquee container */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marquee text style */
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee-animation 15s linear infinite;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
