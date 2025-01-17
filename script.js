@@ -30,8 +30,8 @@ function prevSlide() {
     showCarousel();
 }
 
-// Automatically switch carousel slides every 5 seconds
-setInterval(nextSlide, 5000);
+// Automatically switch carousel slides every 3 seconds
+setInterval(nextSlide, 3000);
 
 // Initialize carousel on page load
 document.addEventListener("DOMContentLoaded", () => {
