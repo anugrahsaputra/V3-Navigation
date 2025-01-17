@@ -45,7 +45,7 @@ header h1 {
 
 /* Menu Hamburger */
 .menu-icon {
-    display: none;
+    display: none; /* Tetap tidak terlihat di desktop */
     font-size: 30px;
     cursor: pointer;
     padding: 10px;
@@ -53,11 +53,11 @@ header h1 {
     color: white;
     border: none;
     border-radius: 5px;
-    position: absolute;
+    position: fixed; /* Tetap di tempat meskipun halaman di-scroll */
     left: 10px;
-    top: 15px;
+    top: 15px; /* Atur posisi sesuai kebutuhan */
+    z-index: 1000; /* Pastikan menu selalu berada di atas elemen lain */
 }
-
 /* Style for navigation */
 nav {
     background: #333;
