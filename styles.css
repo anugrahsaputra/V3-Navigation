@@ -375,3 +375,7 @@ h1 {
 .container {
     height: 100vh; /* Tinggi container akan sesuai dengan tinggi layar */
 }
+
+.container {
+    width: 100vw;  /* Lebar elemen 80% dari lebar viewport */
+}
