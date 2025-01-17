@@ -139,3 +139,8 @@ nav ul li {
     border-top: 2px solid #000;  /* Menambahkan garis pemisah */
     margin: 20px 0;  /* Memberikan jarak atas dan bawah */
 }
+
+footer {
+    text-align: center;  /* Memusatkan teks */
+    padding: 10px 0;  /* Memberikan ruang di atas dan bawah */
+}
