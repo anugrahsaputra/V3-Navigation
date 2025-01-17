@@ -45,7 +45,7 @@ header h1 {
 
 /* Menu Hamburger */
 .menu-icon {
-    display: none; /* Tetap tidak terlihat di desktop */
+    display: none;
     font-size: 30px;
     cursor: pointer;
     padding: 10px;
@@ -53,10 +53,9 @@ header h1 {
     color: white;
     border: none;
     border-radius: 5px;
-    position: fixed; /* Tetap di tempat meskipun halaman di-scroll */
+    position: absolute;
     left: 10px;
-    top: 15px; /* Atur posisi sesuai kebutuhan */
-    z-index: 1000; /* Pastikan menu selalu berada di atas elemen lain */
+    top: 15px;
 }
 /* Style for navigation */
 nav {
@@ -84,31 +83,14 @@ nav a:hover {
 
 /* Mobile Menu */
 nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #333;
-    position: fixed; /* Supaya menu muncul di atas konten lain */
-    top: 60px; /* Sesuaikan dengan tinggi header */
-    left: 0;
-    transition: all 0.3s ease-in-out; /* Efek transisi */
-}
-
-nav.active ul {
     display: flex;
-    transform: translateY(0); /* Tampilkan menu */
+    list-style: none;
+    padding: 0;
 }
 
 nav ul li {
-    text-align: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #444;
-}
-
-nav ul li:last-child {
-    border-bottom: none; /* Hilangkan garis pada elemen terakhir */
-}
-
+    margin: 0 10px;
+    }
 /* Teks Berjalan */
 .marquee-container {
     width: 100%;
