@@ -191,5 +191,22 @@
         </div>
         <p>&copy; 2025 MTs Darul Ulum - Semua Hak Dilindungi.</p>
     </footer>
+
+    <script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.carousel img');
+        const totalSlides = slides.length;
+
+        // Hitung indeks slide baru
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+        // Geser carousel ke slide baru
+        const offset = -currentIndex * 100; // 100% lebar per slide
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+    </script>
 </body>
 </html>
