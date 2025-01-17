@@ -367,3 +367,11 @@ header {
 #menu-list.show {
     display: block;
     }
+
+h1 {
+    font-size: 5vw; /* Ukuran font akan menyesuaikan dengan lebar layar */
+}
+
+.container {
+    height: 100vh; /* Tinggi container akan sesuai dengan tinggi layar */
+}
