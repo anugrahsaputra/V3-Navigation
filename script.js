@@ -1,32 +1,36 @@
-// Fungsi untuk men-toggle menu pada perangkat mobile
+// Fungsi untuk menampilkan atau menyembunyikan menu saat tombol hamburger diklik
 function toggleMenu() {
     const menuList = document.getElementById('menu-list');
-    if (menuList.style.display === "block") {
-        menuList.style.display = "none";
-    } else {
-        menuList.style.display = "block";
-    }
+    menuList.classList.toggle('show');
 }
 
-// Efek animasi saat elemen muncul di viewport
-const faders = document.querySelectorAll('.fade-in-left, .fade-in-right');
+// Menambahkan event listener untuk mendeteksi ketika halaman dimuat
+document.addEventListener('DOMContentLoaded', function () {
+    // Mengatur elemen dengan class fade-in-left dan fade-in-right agar muncul dengan animasi
+    const fadeInLeftElements = document.querySelectorAll('.fade-in-left');
+    const fadeInRightElements = document.querySelectorAll('.fade-in-right');
+    
+    // Memunculkan elemen secara perlahan
+    function handleScrollAnimation() {
+        fadeInLeftElements.forEach(element => {
+            if (isElementInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+        fadeInRightElements.forEach(element => {
+            if (isElementInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    }
 
-const appearOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px -50px 0px"
-};
+    // Mengecek apakah elemen berada dalam viewport saat discroll
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth));
+    }
 
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('appear');
-            observer.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
+    // Menambahkan kelas visible untuk mengaktifkan animasi
+    window.addEventListener('scroll', handleScrollAnimation);
+    handleScrollAnimation(); // Panggil untuk memastikan animasi muncul saat pertama kali dimuat
 });
