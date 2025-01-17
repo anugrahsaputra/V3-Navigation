@@ -1,15 +1,13 @@
-/* Umum */
+/* Gaya Umum */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f4f9f4; /* Warna latar belakang hijau muda */
     margin: 0;
     padding: 0;
 }
 
-/* Header */
 header {
-    background-color: #4CAF50; /* Hijau sesuai dengan logo */
+    background-color: #4CAF50; /* Hijau gelap untuk header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -19,176 +17,115 @@ header .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 header .logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
 }
 
-header h1 {
-    font-size: 2em;
+header .school-info h1 {
     margin: 0;
 }
 
-header .slogan {
+header .school-info .slogan {
     font-style: italic;
 }
 
-/* Navbar */
-#navbar {
+nav {
     background-color: #388E3C; /* Hijau lebih gelap untuk navbar */
     padding: 10px;
-    text-align: center;
 }
 
-#navbar a {
+nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    display: inline-block;
-    font-size: 1.1em;
+    margin: 0 15px;
 }
 
-#navbar a:hover {
-    background-color: #4CAF50;
-    border-radius: 5px;
+nav a:hover {
+    text-decoration: underline;
 }
 
-/* Main Section */
 main {
     padding: 20px;
-    background-color: white;
+}
+
+/* Section dengan Bubble Efek */
+section {
+    background-color: #e1f5e1; /* Warna hijau muda */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px; /* Membuat bubble */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Efek hover naik */
 }
 
 h2 {
-    color: #388E3C; /* Warna hijau gelap untuk heading */
-}
-
-section {
-    margin-bottom: 30px;
+    color: #388E3C; /* Warna hijau gelap untuk judul */
+    text-align: center;
 }
 
 ul {
     list-style-type: none;
-    padding: 0;
+    padding-left: 0;
 }
 
 ul li {
-    margin-bottom: 10px;
+    padding: 5px;
 }
 
-/* Fasilitas Sekolah */
-#fasilitas ul li {
-    font-weight: bold;
+ul li:before {
+    content: "✔️ ";
+    color: #388E3C;
 }
 
-/* Carousel */
-#carousel {
-    margin-top: 30px;
+/* Bubble Effect di Visi dan Misi */
+#visi, #fasilitas {
+    background: #dcedc8; /* Warna hijau muda yang sedikit lebih terang */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    overflow: hidden;
+#visi ul {
+    padding-left: 20px;
 }
 
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease;
+#visi li, #fasilitas li {
+    margin: 5px 0;
 }
 
-.carousel-slide img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+/* Gaya untuk Marquee Text */
+.marquee-container {
+    background-color: #388E3C;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.marquee-text {
+    font-size: 18px;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 /* Footer */
 footer {
-    background-color: #388E3C;
+    background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
 }
 
 footer p {
-    margin: 5px;
-}
-
-.social-media a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.social-media a:hover {
-    text-decoration: underline;
-}
-
-/* Menu responsif */
-#menu-list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-#menu-list li {
-    margin: 10px;
-}
-
-#menu-list.active {
-    display: block;
-}
-
-.menu-icon {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    #menu-list {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #388E3C;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        width: 200px;
-        border-radius: 8px;
+    margin: 5px 0;
     }
-
-    .menu-icon {
-        display: block;
-        font-size: 30px;
-        color: white;
-        background-color: #388E3C;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-}
-
-/* Carousel */
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide img {
-    margin-right: 20px;
-    border-radius: 8px;
-}
