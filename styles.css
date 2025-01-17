@@ -175,13 +175,14 @@ footer {
     color: #333;
     position: absolute;
     left: 20px;
-    top: 15px;
+    top: 140px;
 }
 
 /* Menampilkan ikon hamburger pada layar kecil */
 @media (max-width: 768px) {
     .menu-icon {
         display: block; /* Menampilkan ikon hamburger */
+        top: 140px;
     }
 
     /* Menyembunyikan daftar menu secara default */
