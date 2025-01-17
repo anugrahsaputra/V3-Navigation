@@ -145,28 +145,17 @@ footer {
     padding: 10px 0;  /* Memberikan ruang di atas dan bawah */
 }
 
-.social-media {
-    margin-top: 20px;
-}
-
 .social-media a {
     text-decoration: none;
-    margin-right: 15px;
+    color: white; /* Mengubah warna teks menjadi putih */
+    margin-right: 10px;
     font-size: 18px;
-    color: #333;
 }
 
 .social-media a:hover {
-    color: #FFFFFF;
+    color: #007bff; /* Warna teks saat hover (tetap bisa diubah) */
 }
 
-/* Optional: Style icons for social media links */
-.social-media a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.social-media a:hover img {
-    transform: scale(1.2);    
+.social-media i {
+    margin-right: 5px;
 }
