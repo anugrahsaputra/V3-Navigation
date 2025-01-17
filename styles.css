@@ -159,3 +159,30 @@ footer {
 .social-media i {
     margin-right: 5px;
 }
+
+.ekstrakurikuler-gallery {
+    width: 100%;
+    overflow: hidden; /* Menyembunyikan gambar yang keluar dari batas */
+}
+
+.slider {
+    display: flex;
+    animation: slideRight 10s infinite linear;  /* Efek geser otomatis ke kanan */
+}
+
+.slider img {
+    width: 30%;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Geser gambar ke kiri */
+    }
+}
+
