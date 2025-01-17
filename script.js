@@ -1,57 +1,47 @@
-// Toggle menu for responsive navigation
-function toggleMenu() {
-    const menuList = document.getElementById("menu-list");
-    if (menuList.style.display === "block") {
-        menuList.style.display = "none";
-    } else {
-        menuList.style.display = "block";
-    }
+// Fungsi untuk menambahkan efek fade-in pada elemen dengan kelas tertentu
+function fadeInElement(element, duration) {
+    element.style.opacity = 0;
+    element.style.transition = `opacity ${duration}s ease-in-out`;
+    element.style.opacity = 1;
 }
 
-// Carousel functionality
-let currentIndex = 0;
-
-function showCarousel() {
-    const slides = document.querySelectorAll(".carousel-slide img");
-    slides.forEach((slide, index) => {
-        slide.style.display = index === currentIndex ? "block" : "none";
+// Menambahkan animasi fade-in ke setiap bagian ketika halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        // Menambahkan sedikit delay agar animasi bergantian
+        setTimeout(() => {
+            fadeInElement(section, 1);
+        }, index * 300); // Delay per bagian
     });
-}
-
-function nextSlide() {
-    const slides = document.querySelectorAll(".carousel-slide img");
-    currentIndex = (currentIndex + 1) % slides.length;
-    showCarousel();
-}
-
-function prevSlide() {
-    const slides = document.querySelectorAll(".carousel-slide img");
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showCarousel();
-}
-
-// Automatically switch carousel slides every 3 seconds
-setInterval(nextSlide, 3000);
-
-// Initialize carousel on page load
-document.addEventListener("DOMContentLoaded", () => {
-    showCarousel();
 });
 
-// Scroll animation for fade-in effects
-function handleScroll() {
-    const fadeInElements = document.querySelectorAll(".fade-in-left, .fade-in-right");
-    fadeInElements.forEach((element) => {
-        const position = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (position < windowHeight - 100) {
-            element.style.opacity = 1;
-            element.style.transform = "translateX(0)";
-        }
-    });
+// Menu toggle untuk tampilan responsif
+function toggleMenu() {
+    const menuList = document.getElementById('menu-list');
+    menuList.classList.toggle('active');
 }
 
-document.addEventListener("scroll", handleScroll);
+// Menambahkan animasi ke carousel gambar
+let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide img');
+const totalSlides = slides.length;
 
-// Initial call for fade-in effect
-document.addEventListener("DOMContentLoaded", handleScroll);
+function changeSlide() {
+    const carouselSlide = document.querySelector('.carousel-slide');
+    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+    carouselSlide.style.transform = `translateX(-${currentIndex * 220}px)`; // Menyesuaikan lebar gambar
+}
+
+// Fungsi untuk memulai carousel
+function startCarousel() {
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        changeSlide();
+    }, 3000); // Ganti gambar setiap 3 detik
+}
+
+// Mulai carousel setelah halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    startCarousel();
+});
