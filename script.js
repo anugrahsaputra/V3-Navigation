@@ -1,41 +1,32 @@
-// Fungsi untuk membuka atau menutup menu saat ikon menu (hamburger) diklik
+// Fungsi untuk men-toggle menu pada perangkat mobile
 function toggleMenu() {
-    var menuList = document.getElementById("menu-list");
-    var menuIcon = document.querySelector(".menu-icon");
-
-    // Periksa apakah menu terbuka atau tertutup
+    const menuList = document.getElementById('menu-list');
     if (menuList.style.display === "block") {
-        menuList.style.display = "none"; // Menutup menu
+        menuList.style.display = "none";
     } else {
-        menuList.style.display = "block"; // Membuka menu
+        menuList.style.display = "block";
     }
 }
 
-// Fungsi untuk menambahkan efek fade-in ke elemen dengan kelas 'fade-in-left' atau 'fade-in-right'
-document.addEventListener("DOMContentLoaded", function() {
-    const fadeInElements = document.querySelectorAll('.fade-in-left, .fade-in-right');
+// Efek animasi saat elemen muncul di viewport
+const faders = document.querySelectorAll('.fade-in-left, .fade-in-right');
 
-    fadeInElements.forEach(function(element) {
-        element.classList.add('fade-in'); // Menambahkan kelas untuk memulai animasi
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        }
     });
-});
+}, appearOptions);
 
-// Fungsi untuk menambahkan animasi fade-in pada elemen
-function fadeInElement(element) {
-    element.style.opacity = 0; // Set opacity ke 0 untuk memulai animasi
-    element.style.transition = "opacity 1.5s ease-in"; // Menambahkan transisi
-
-    // Menunggu hingga elemen siap, kemudian ubah opacity menjadi 1
-    setTimeout(function() {
-        element.style.opacity = 1;
-    }, 100); // Sedikit delay untuk memulai animasi setelah elemen terlihat
-}
-
-// Fungsi untuk menambahkan efek fade-in ke elemen dengan kelas 'fade-in-left' atau 'fade-in-right'
-document.addEventListener("DOMContentLoaded", function() {
-    const fadeInElements = document.querySelectorAll('.fade-in-left, .fade-in-right');
-
-    fadeInElements.forEach(function(element) {
-        fadeInElement(element); // Memicu animasi fade-in pada setiap elemen
-    });
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
 });
