@@ -5,92 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website MTs Darul Ulum</title>
     <link rel="stylesheet" href="css/style.css">
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-
-        header {
-            background: #228B22;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            background: #333;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #007bff;
-            border-radius: 5px;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        section h2 {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-               /* Teks Berjalan */
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
-
-        .marquee-text {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 15s linear infinite;
-       }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }      
-    </style>
 </head>
 <body>
     
@@ -108,7 +22,7 @@
     <main>
         <section id="profil">
             <h2>Profil Sekolah</h2>
-              <img src="foto-sekolah.jpg" alt="Foto MTs Darul Ulum" style="width:100%; height:auto; border-radius:8px; margin-bottom: 20px;">
+            <img src="foto-sekolah.jpg" alt="Foto MTs Darul Ulum" style="width:100%; height:auto; border-radius:8px; margin-bottom: 20px;">
             <p>MTs Darul Ulum Cimahpar adalah Madrasah Tsanawiyah swasta yang berlokasi di Jalan Raden Khanifiah, Cimahpar, Kota Bogor, Jawa Barat. Didirikan pada 1 Januari 1970, sekolah ini berada di bawah naungan Kementerian Agama dan berstatus akreditasi B berdasarkan SK Akreditasi Nomor 1347/BAN-SM/SK/2021 yang berlaku hingga 31 Desember 2026.</p>
         </section>
 
@@ -125,13 +39,12 @@
         </section>
 
         <h1>Prestasi Sekolah MTs Darul Ulum</h1>
-    <nav>
-        <a href="#prestasi-1">Prestasi 1</a>
-        <a href="#prestasi-2">Prestasi 2</a>
-        <a href="#prestasi-3">Prestasi 3</a>
-        <a href="#prestasi-4">Prestasi 4</a>
-    </nav>
-        <main>
+        <nav>
+            <a href="#prestasi-1">Prestasi 1</a>
+            <a href="#prestasi-2">Prestasi 2</a>
+            <a href="#prestasi-3">Prestasi 3</a>
+            <a href="#prestasi-4">Prestasi 4</a>
+        </nav>
         <section id="prestasi-1">
             <h2>Juara 1 Lomba Matematika</h2>
             <p>Siswa MTs Darul Ulum berhasil meraih Juara 1 dalam Lomba Matematika tingkat Kota Bogor pada tahun 2024. Prestasi ini menunjukkan kemampuan akademik yang luar biasa dari siswa kami.</p>
@@ -151,23 +64,22 @@
             <h2>Juara 1 Kompetisi Cerdas Cermat Sains</h2>
             <p>Siswa kami berhasil meraih Juara 1 dalam Kompetisi Cerdas Cermat Sains tingkat Nasional pada tahun 2022. Kemenangan ini memperlihatkan dedikasi kami dalam mengembangkan ilmu pengetahuan di kalangan siswa.</p>
         </section>
-        </main>
 
-                <!-- Galeri Gambar Geser -->
-<section id="galeri">
-    <h2>Galeri Foto</h2>
-    <div class="carousel-container">
-        <div class="carousel">
-            <img src="image1.jpg" alt="Gambar 1">
-            <img src="image2.jpg" alt="Gambar 2">
-            <img src="image3.jpg" alt="Gambar 3">
-            <img src="image4.jpg" alt="Gambar 4">
-            <img src="image5.jpg" alt="Gambar 5">
-        </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-</section>
+        <!-- Galeri Gambar Geser -->
+        <section id="galeri">
+            <h2>Galeri Foto</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="image1.jpg" alt="Gambar 1">
+                    <img src="image2.jpg" alt="Gambar 2">
+                    <img src="image3.jpg" alt="Gambar 3">
+                    <img src="image4.jpg" alt="Gambar 4">
+                    <img src="image5.jpg" alt="Gambar 5">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
 
         <section id="berita">
             <h2>Berita Terbaru</h2>
@@ -182,7 +94,7 @@
         </section>
     </main>
 
-       <!-- Teks Berjalan di Footer -->
+    <!-- Teks Berjalan di Footer -->
     <footer>
         <div class="marquee-container">
             <div class="marquee-text">
