@@ -153,6 +153,9 @@ footer {
     width: 100%;
     overflow: hidden;
     position: relative;
+    background-color: #D3D3D3; /* Warna abu-abu */
+    padding: 10px 0; /* Menambahkan sedikit padding */
+}
 }
 
 /* Marquee text style */
