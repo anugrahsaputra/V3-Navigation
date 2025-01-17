@@ -165,3 +165,79 @@ footer {
     font-weight: bold;
 }
 
+/* Gaya untuk ikon menu hamburger (garis tiga) */
+.menu-icon {
+    display: none; /* Menyembunyikan ikon hamburger di layar besar */
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+/* Menampilkan ikon hamburger pada layar kecil */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Menampilkan ikon hamburger */
+    }
+
+    /* Menyembunyikan daftar menu secara default */
+    #menu-list {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px; /* Menempatkan menu di bawah navbar */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+    }
+
+    /* Ketika menu toggle diaktifkan */
+    #menu-list.show {
+        display: flex;
+    }
+
+    #menu-list li {
+        padding: 10px;
+        width: 100%;
+    }
+
+    #menu-list li a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    #menu-list li a:hover {
+        background-color: #f0f0f0;
+    }
+}
+
+/* Gaya untuk menu yang tidak terpengaruh di layar besar */
+@media (min-width: 769px) {
+    #menu-list {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #menu-list li {
+        margin: 0 15px;
+    }
+
+    #menu-list li a {
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    #menu-list li a:hover {
+        background-color: #f0f0f0;
+    }
+
