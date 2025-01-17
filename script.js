@@ -1,13 +1,4 @@
 // script.js
-<script>
-    const menuIcon = document.querySelector('.menu-icon');
-    const nav = document.querySelector('nav');
-
-    menuIcon.addEventListener('click', () => {
-        nav.classList.toggle('active'); // Menambah/menghapus kelas "active"
-    });
-</script>
-
 // JavaScript untuk Toggle Menu Hamburger
 function toggleMenu() {
     const navbar = document.getElementById('navbar');
