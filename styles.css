@@ -238,3 +238,9 @@ footer .marquee-text {
     }
 }
 
+a:hover {
+  color: #ff6347;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
