@@ -129,3 +129,48 @@ footer {
 footer p {
     margin: 5px 0;
     }
+
+/* Efek Fade-In */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1.5s forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in-left {
+    animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-right {
+    animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
