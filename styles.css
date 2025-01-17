@@ -6,15 +6,23 @@ body {
     background-color: #f4f4f9;
 }
 
+/* Header */
 header {
     background: #228B22;
     color: #fff;
-    padding: 15px 0;
     text-align: center;
+    padding: 15px;
 }
 
 header h1 {
     margin: 0;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
 }
 
 /* Menu Hamburger */
@@ -32,10 +40,10 @@ header h1 {
     top: 15px;
 }
 
-/* Style for navigation */
+/* Navigation */
 nav {
-    background: rgba(128, 128, 128, 0.7); /* Warna abu-abu dengan transparansi */
-    color: black; /* Warna teks default di dalam menu */
+    background: rgba(128, 128, 128, 0.7);
+    color: black;
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -49,14 +57,15 @@ nav a {
     padding: 10px 20px;
     margin: 0 5px;
     transition: background 0.3s;
+    font-size: 14px;
 }
 
 nav a:hover {
-    background: rgba(0, 0, 0, 0.1); /* Latar belakang hitam transparan saat hover */
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
-/* Mobile Menu */
+/* Responsif untuk navigasi */
 nav ul {
     display: flex;
     list-style: none;
@@ -65,6 +74,33 @@ nav ul {
 
 nav ul li {
     margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }
 
 /* Teks Berjalan */
@@ -91,76 +127,51 @@ nav ul li {
     }
 }
 
-/* Menu Responsif */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul li {
-        text-align: center;
-        width: 100%;
-        padding: 10px;
-    }
-
-    nav ul li a {
-        padding: 15px;
-    }
-
-    nav.active ul {
-        display: flex;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-}
-
-/* Garis pemisah */
+/* Bagian Berita */
 #berita {
     border-bottom: 2px solid #333;
     padding-bottom: 20px;
 }
 
+/* Bagian Kontak */
 #kontak {
     padding-top: 20px;
-}
-
-#kontak {
-    background-color: #003366;  /* Warna biru gelap */
-    color: white;  /* Membuat teks berwarna putih agar kontras dengan latar belakang */
-    padding: 20px;  /* Memberikan jarak di sekitar teks */
-    border-radius: 8px;  /* Membuat sudut bagian kontak sedikit melengkung */
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .separator {
-    border-top: 2px solid #000;  /* Menambahkan garis pemisah */
-    margin: 20px 0;  /* Memberikan jarak atas dan bawah */
+    border-top: 2px solid #000;
+    margin: 20px 0;
 }
 
+/* Footer */
 footer {
-    text-align: center;  /* Memusatkan teks */
-    padding: 10px 0;  /* Memberikan ruang di atas dan bawah */
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: white;
+    font-size: 14px;
 }
 
 .social-media a {
     text-decoration: none;
-    color: white; /* Mengubah warna teks menjadi putih */
+    color: white;
     margin-right: 10px;
     font-size: 18px;
 }
 
 .social-media a:hover {
-    color: #007bff; /* Warna teks saat hover (tetap bisa diubah) */
+    color: #007bff;
 }
 
 .social-media i {
     margin-right: 5px;
 }
 
-/* Styling untuk bagian Ekstrakurikuler */
+/* Ekstrakurikuler */
 #ekstrakurikuler {
     margin: 20px 0;
 }
@@ -170,11 +181,7 @@ footer {
     padding-left: 20px;
 }
 
-/* Styling untuk Carousel Foto */
-#carousel {
-    margin: 20px 0;
-}
-
+/* Carousel Foto */
 .carousel-container {
     position: relative;
     overflow: hidden;
@@ -194,27 +201,13 @@ footer {
     object-fit: cover;
 }
 
-.carousel-container:before, .carousel-container:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
+@media (max-width: 768px) {
+    .carousel-slide img {
+        border-radius: 4px;
+    }
 }
 
-.carousel-container:before {
-    left: 10px;
-}
-
-.carousel-container:after {
-    right: 10px;
-}
-
-/* Efek animasi masuk dari kiri */
+/* Animasi Masuk */
 .fade-in-left {
     opacity: 0;
     transform: translateX(-100%);
@@ -228,7 +221,6 @@ footer {
     }
 }
 
-/* Efek animasi masuk dari kanan */
 .fade-in-right {
     opacity: 0;
     transform: translateX(100%);
@@ -242,21 +234,21 @@ footer {
     }
 }
 
-/* Garis batas untuk bagian Visi dan Misi */
+/* Visi dan Misi */
 #visi {
-    border-bottom: 2px solid #2c3e50;  /* Garis horizontal di bawah bagian Visi */
+    border-bottom: 2px solid #2c3e50;
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
-/* Garis batas untuk bagian Prestasi */
+/* Prestasi */
 #prestasi {
-    border-top: 2px solid #2c3e50; /* Garis horizontal di ata bagian Prestasi */
+    border-top: 2px solid #2c3e50;
     padding-top: 20px;
     margin-top: 20px;
 }
 
-/* Jika ingin menambahkan garis vertikal pada judul Visi dan Misi dan Prestasi */
+/* Garis pada H2 */
 h2 {
     position: relative;
 }
@@ -268,20 +260,11 @@ h2::before {
     top: 50%;
     width: 20px;
     height: 2px;
-    background-color: #2c3e50; /* Warna garis */
+    background-color: #2c3e50;
     transform: translateY(-50%);
 }
 
-/* Style untuk header */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-/* Kontainer untuk logo dan informasi sekolah */
+/* Header dengan Logo */
 .logo-container {
     display: flex;
     align-items: center;
@@ -289,16 +272,10 @@ header {
     text-align: center;
 }
 
-/* Gaya untuk logo */
 .logo {
     width: 80px;
     height: auto;
     margin-right: 20px;
-}
-
-/* Gaya untuk nama sekolah dan slogan */
-.school-info {
-    text-align: center;
 }
 
 .school-info h1 {
@@ -312,54 +289,19 @@ header {
     font-size: 16px;
     color: #777;
     margin-top: 5px;
-    line-height: 1.5;
 }
 
-/* Style untuk menu */
-#navbar {
-    position: relative;
-    background-color: #333;
-    padding: 10px;
-    color: white;
-}
+/* Responsif */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
 
-/* Tampilkan menu di kiri secara vertikal */
-#menu-list {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #444;
-    width: 200px;
-    height: 100vh; /* Tampilkan sepanjang tinggi layar */
-    list-style-type: none;
-    margin: 0;
-    padding: 20px 0;
-}
+    header h1 {
+        font-size: 20px;
+    }
 
-#menu-list li {
-    padding: 10px 20px;
-    border-bottom: 1px solid #555;
-}
-
-#menu-list li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Gaya tombol menu */
-.menu-icon {
-    font-size: 30px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-}
-
-/* Ketika menu dibuka, tampilkan menu */
-#menu-list.show {
-    display: block;
-}
-
+    nav a {
+        font-size: 14px;
+    }
+    }
