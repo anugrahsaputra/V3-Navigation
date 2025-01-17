@@ -186,3 +186,14 @@ footer {
     }
 }
 
+.slider img:hover {
+    transform: scale(1.05); /* Membesarkan gambar sedikit saat di-hover */
+    transition: transform 0.3s ease; /* Animasi halus */
+}
+
+.ekstrakurikuler ul li:hover {
+    color: #007bff; /* Mengubah warna teks saat di-hover */
+    cursor: pointer; /* Mengubah kursor untuk menunjukkan interaksi */
+    transition: color 0.3s ease;
+    }
+
