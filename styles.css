@@ -35,6 +35,7 @@ header {
 }
 
 .slogan {
+  text-align: center; /* Memusatkan teks di dalam elemen */
   font-size: 16px;
   color: #333;
   margin-top: 5px;
