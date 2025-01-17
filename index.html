@@ -23,12 +23,26 @@
             margin: 0;
         }
 
+        /* Menu Hamburger */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Style for navigation */
         nav {
             background: #333;
             color: #fff;
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -44,30 +58,18 @@
             border-radius: 5px;
         }
 
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
+        /* Mobile Menu */
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
         }
 
-        section {
-            margin-bottom: 20px;
+        nav ul li {
+            margin: 0 10px;
         }
 
-        section h2 {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-               /* Teks Berjalan */
+        /* Teks Berjalan */
         .marquee-container {
             width: 100%;
             overflow: hidden;
@@ -80,7 +82,7 @@
             display: inline-block;
             white-space: nowrap;
             animation: marquee 15s linear infinite;
-       }
+        }
 
         @keyframes marquee {
             0% {
@@ -89,7 +91,34 @@
             100% {
                 transform: translateX(-100%);
             }
-        }      
+        }
+
+        /* Menu Responsif */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                text-align: center;
+                width: 100%;
+                padding: 10px;
+            }
+
+            nav ul li a {
+                padding: 15px;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,18 +127,21 @@
         <h1>Selamat Datang di Website MTs Darul Ulum</h1>
     </header>
 
-    <nav>
-        <a href="#profil">Profil Sekolah</a>
-        <a href="#visi">Visi dan Misi</a>
-        <a href="#prestasi">Prestasi</a>
-        <a href="#berita">Berita</a>
-        <a href="#kontak">Kontak</a>
+    <nav id="navbar">
+        <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+        <ul>
+            <li><a href="#profil">Profil Sekolah</a></li>
+            <li><a href="#visi">Visi dan Misi</a></li>
+            <li><a href="#prestasi">Prestasi</a></li>
+            <li><a href="#berita">Berita</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
     </nav>
 
     <main>
         <section id="profil">
             <h2>Profil Sekolah</h2>
-              <img src="foto-sekolah.jpg" alt="Foto MTs Darul Ulum" style="width:100%; height:auto; border-radius:8px; margin-bottom: 20px;">
+            <img src="foto-sekolah.jpg" alt="Foto MTs Darul Ulum" style="width:100%; height:auto; border-radius:8px; margin-bottom: 20px;">
             <p>MTs Darul Ulum Cimahpar adalah Madrasah Tsanawiyah swasta yang berlokasi di Jalan Raden Khanifiah, Cimahpar, Kota Bogor, Jawa Barat. Didirikan pada 1 Januari 1970, sekolah ini berada di bawah naungan Kementerian Agama dan berstatus akreditasi B berdasarkan SK Akreditasi Nomor 1347/BAN-SM/SK/2021 yang berlaku hingga 31 Desember 2026.</p>
         </section>
 
@@ -126,34 +158,33 @@
         </section>
 
         <section id="prestasi">
-        <h1>Prestasi Sekolah MTs Darul Ulum</h1>
-    <nav>
-        <a href="#prestasi-1">Prestasi 1</a>
-        <a href="#prestasi-2">Prestasi 2</a>
-        <a href="#prestasi-3">Prestasi 3</a>
-        <a href="#prestasi-4">Prestasi 4</a>
-    </nav>
-        <main>
-        <section id="prestasi-1">
-            <h2>Juara 1 Lomba Matematika</h2>
-            <p>Siswa MTs Darul Ulum berhasil meraih Juara 1 dalam Lomba Matematika tingkat Kota Bogor pada tahun 2024. Prestasi ini menunjukkan kemampuan akademik yang luar biasa dari siswa kami.</p>
-        </section>
+            <h1>Prestasi Sekolah MTs Darul Ulum</h1>
+            <nav>
+                <a href="#prestasi-1">Prestasi 1</a>
+                <a href="#prestasi-2">Prestasi 2</a>
+                <a href="#prestasi-3">Prestasi 3</a>
+                <a href="#prestasi-4">Prestasi 4</a>
+            </nav>
+            <section id="prestasi-1">
+                <h2>Juara 1 Lomba Matematika</h2>
+                <p>Siswa MTs Darul Ulum berhasil meraih Juara 1 dalam Lomba Matematika tingkat Kota Bogor pada tahun 2024. Prestasi ini menunjukkan kemampuan akademik yang luar biasa dari siswa kami.</p>
+            </section>
 
-        <section id="prestasi-2">
-            <h2>Juara 2 Lomba Debat Bahasa Indonesia</h2>
-            <p>Tim debat bahasa Indonesia dari MTs Darul Ulum meraih Juara 2 pada Lomba Debat Bahasa Indonesia tingkat Provinsi Jawa Barat tahun 2023. Ini adalah pencapaian besar bagi siswa kami dalam bidang komunikasi dan argumentasi.</p>
-        </section>
+            <section id="prestasi-2">
+                <h2>Juara 2 Lomba Debat Bahasa Indonesia</h2>
+                <p>Tim debat bahasa Indonesia dari MTs Darul Ulum meraih Juara 2 pada Lomba Debat Bahasa Indonesia tingkat Provinsi Jawa Barat tahun 2023. Ini adalah pencapaian besar bagi siswa kami dalam bidang komunikasi dan argumentasi.</p>
+            </section>
 
-        <section id="prestasi-3">
-            <h2>Juara 1 Festival Seni dan Budaya</h2>
-            <p>MTs Darul Ulum memenangkan Juara 1 dalam Festival Seni dan Budaya tingkat Madrasah Tsanawiyah se-Jawa Barat yang diadakan pada tahun 2023. Prestasi ini mengukuhkan kami sebagai sekolah yang mendukung pengembangan seni dan budaya.</p>
-        </section>
+            <section id="prestasi-3">
+                <h2>Juara 1 Festival Seni dan Budaya</h2>
+                <p>MTs Darul Ulum memenangkan Juara 1 dalam Festival Seni dan Budaya tingkat Madrasah Tsanawiyah se-Jawa Barat yang diadakan pada tahun 2023. Prestasi ini mengukuhkan kami sebagai sekolah yang mendukung pengembangan seni dan budaya.</p>
+            </section>
 
-        <section id="prestasi-4">
-            <h2>Juara 1 Kompetisi Cerdas Cermat Sains</h2>
-            <p>Siswa kami berhasil meraih Juara 1 dalam Kompetisi Cerdas Cermat Sains tingkat Nasional pada tahun 2022. Kemenangan ini memperlihatkan dedikasi kami dalam mengembangkan ilmu pengetahuan di kalangan siswa.</p>
+            <section id="prestasi-4">
+                <h2>Juara 1 Kompetisi Cerdas Cermat Sains</h2>
+                <p>Siswa kami berhasil meraih Juara 1 dalam Kompetisi Cerdas Cermat Sains tingkat Nasional pada tahun 2022. Kemenangan ini memperlihatkan dedikasi kami dalam mengembangkan ilmu pengetahuan di kalangan siswa.</p>
+            </section>
         </section>
-        </main>
 
         <section id="berita">
             <h2>Berita Terbaru</h2>
@@ -168,7 +199,6 @@
         </section>
     </main>
 
-       <!-- Teks Berjalan di Footer -->
     <footer>
         <div class="marquee-container">
             <div class="marquee-text">
@@ -177,5 +207,13 @@
         </div>
         <p>&copy; 2025 MTs Darul Ulum - Semua Hak Dilindungi.</p>
     </footer>
+
+    <script>
+        // JavaScript untuk Toggle Menu Hamburger
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
-</html>
+                                                                                   </html>
