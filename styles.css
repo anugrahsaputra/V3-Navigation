@@ -144,3 +144,29 @@ footer {
     text-align: center;  /* Memusatkan teks */
     padding: 10px 0;  /* Memberikan ruang di atas dan bawah */
 }
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.social-media a:hover {
+    color: #007bff;
+}
+
+/* Optional: Style icons for social media links */
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.2);    
+}
