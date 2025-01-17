@@ -242,11 +242,6 @@ footer {
     }
 }
 
-/* Pastikan elemen tetap tersembunyi sebelum animasi */
-.fade-in-left, .fade-in-right {
-    transition: all 0.5s ease;
-}
-
 /* Garis batas untuk bagian Visi dan Misi */
 #visi {
     border-bottom: 2px solid #2c3e50;  /* Garis horizontal di bawah bagian Visi */
@@ -256,7 +251,7 @@ footer {
 
 /* Garis batas untuk bagian Prestasi */
 #prestasi {
-    border-top: 2px solid #2c3e50; /* Garis horizontal di atas bagian Prestasi */
+    border-top: 2px solid #2c3e50; /* Garis horizontal di ata bagian Prestasi */
     padding-top: 20px;
     margin-top: 20px;
 }
