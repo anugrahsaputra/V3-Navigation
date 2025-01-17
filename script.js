@@ -1,8 +1,8 @@
 // script.js
-// Fungsi untuk toggle menu (seperti sebelumnya)
+// Fungsi untuk toggle menu
 function toggleMenu() {
-    var navbar = document.getElementById('navbar');
-    navbar.classList.toggle('active');
+    var menu = document.getElementById('menu-list');
+    menu.classList.toggle('show');
 }
 
 // Carousel otomatis dan navigasi
