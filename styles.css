@@ -233,3 +233,32 @@ footer {
         margin: 10px;
     }
 }
+
+/* Kontak Kami */
+#kontak {
+    background-color: #003366; /* Warna biru tua */
+    color: white; /* Warna teks putih untuk kontras */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#kontak h2 {
+    color: #FFD700; /* Warna emas untuk judul agar lebih menonjol */
+}
+
+#kontak p {
+    margin: 10px 0;
+}
+
+/* Social Media Links */
+.social-media a {
+    font-weight: bold; /* Membuat font menjadi tebal */
+    text-decoration: underline; /* Menambahkan garis bawah */
+    color: #FFD700; /* Warna emas untuk teks sosial media */
+}
+
+.social-media a:hover {
+    color: #FFFFFF; /* Warna putih saat hover */
+    text-decoration: underline; /* Tetap ada garis bawah */
+}
