@@ -4,129 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website MTs Darul Ulum</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-
-        header {
-            background: #228B22;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        /* Menu Hamburger */
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            position: absolute;
-            left: 10px; /* Pindahkan ke kiri */
-            top: 15px; /* Sesuaikan posisi vertikal */
-        }
-
-        /* Style for navigation */
-        nav {
-            background: #333;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            flex-wrap: wrap;
-            position: relative; /* Untuk penempatan menu-icon */
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #007bff;
-            border-radius: 5px;
-        }
-
-        /* Mobile Menu */
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        /* Teks Berjalan */
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
-
-        .marquee-text {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 15s linear infinite;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Menu Responsif */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            nav ul li {
-                text-align: center;
-                width: 100%;
-                padding: 10px;
-            }
-
-            nav ul li a {
-                padding: 15px;
-            }
-
-            nav.active ul {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS eksternal -->
 </head>
 <body>
-    
     <header>
         <h1>Selamat Datang di Website MTs Darul Ulum</h1>
     </header>
@@ -213,12 +93,7 @@
         <p>&copy; 2025 MTs Darul Ulum - Semua Hak Dilindungi.</p>
     </footer>
 
-    <script>
-        // JavaScript untuk Toggle Menu Hamburger
-        function toggleMenu() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
-        }
-    </script>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
