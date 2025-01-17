@@ -211,3 +211,13 @@ footer {
     }
     }
 
+#navbar ul li a {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    background-color: #007bff; /* Mengubah latar belakang saat hover */
+    color: white; /* Mengubah warna teks saat hover */
+}
+
