@@ -56,22 +56,3 @@ document.addEventListener("scroll", handleScroll);
 // Initial call for fade-in effect
 document.addEventListener("DOMContentLoaded", handleScroll);
 
-let slideIndex = 0;
-
-function moveSlide(step) {
-    const slides = document.querySelectorAll('.carousel-slide img');
-    slideIndex += step;
-
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-    }
-
-    document.querySelector('.carousel-container').style.transform = `translateX(${-slideIndex * 100}%)`;
-}
-
-// Optional: auto-slide every 3 seconds
-setInterval(() => {
-    moveSlide(1);
-}, 3000);
