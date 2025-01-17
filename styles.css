@@ -221,3 +221,20 @@ footer {
     color: white; /* Mengubah warna teks saat hover */
 }
 
+footer .marquee-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    animation: marqueeScroll 10s linear infinite;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
