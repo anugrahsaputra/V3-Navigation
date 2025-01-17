@@ -20,9 +20,8 @@ header {
     padding: 20px 0; /* Memberikan sedikit ruang atas dan bawah */
 }
 
-.logo {
-     max-width: 100px; /* Mengatur ukuran logo */
-    margin-right: 20px; /* Memberikan jarak antara logo dan teks */
+ .logo {
+        margin-bottom: 10px; /* Memberikan jarak antara logo dan teks pada layar kecil */
 }
 
 .school-info {
