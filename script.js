@@ -1,84 +1,57 @@
-// script.js
-// Fungsi untuk toggle menu
+// Toggle menu for responsive navigation
 function toggleMenu() {
-    var menu = document.getElementById('menu-list');
-    menu.classList.toggle('show');
+    const menuList = document.getElementById("menu-list");
+    if (menuList.style.display === "block") {
+        menuList.style.display = "none";
+    } else {
+        menuList.style.display = "block";
+    }
 }
 
-// Carousel otomatis dan navigasi
+// Carousel functionality
 let currentIndex = 0;
-const images = document.querySelectorAll('.carousel-slide img');
-const totalImages = images.length;
 
-function changeImage() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+function showCarousel() {
+    const slides = document.querySelectorAll(".carousel-slide img");
+    slides.forEach((slide, index) => {
+        slide.style.display = index === currentIndex ? "block" : "none";
+    });
 }
 
-document.querySelector('.carousel-container').addEventListener('click', changeImage);
+function nextSlide() {
+    const slides = document.querySelectorAll(".carousel-slide img");
+    currentIndex = (currentIndex + 1) % slides.length;
+    showCarousel();
+}
 
-// Mulai carousel otomatis
-setInterval(changeImage, 3000);  // Ganti gambar setiap 3 detik
+function prevSlide() {
+    const slides = document.querySelectorAll(".carousel-slide img");
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showCarousel();
+}
 
-// Fungsi untuk menambah kelas animasi saat elemen muncul di layar
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.fade-in-left, .fade-in-right');
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
+// Automatically switch carousel slides every 5 seconds
+setInterval(nextSlide, 5000);
 
-        if (elementPosition < screenPosition) {
-            element.classList.add('visible');
+// Initialize carousel on page load
+document.addEventListener("DOMContentLoaded", () => {
+    showCarousel();
+});
+
+// Scroll animation for fade-in effects
+function handleScroll() {
+    const fadeInElements = document.querySelectorAll(".fade-in-left, .fade-in-right");
+    fadeInElements.forEach((element) => {
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (position < windowHeight - 100) {
+            element.style.opacity = 1;
+            element.style.transform = "translateX(0)";
         }
     });
 }
 
-// Menjalankan fungsi saat halaman digulir
-window.addEventListener('scroll', animateOnScroll);
+document.addEventListener("scroll", handleScroll);
 
-// Menambahkan kelas visible untuk memicu animasi
-document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(element => {
-    element.classList.remove('fade-in-left', 'fade-in-right');
-    element.classList.add('visible');
-});
-
-// Fungsi untuk menambahkan kelas fade-in-right saat elemen terlihat
-const elements = document.querySelectorAll('.fade-in-right');
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-right');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.5 // Elemen akan dikenali ketika 50% terlihat
-});
-
-// Menambahkan observer ke semua elemen
-elements.forEach(element => {
-    observer.observe(element);
-});
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const menuIcon = document.querySelector('.menu-icon');
-        const navMenu = document.querySelector('nav ul');
-
-        menuIcon.addEventListener('click', function () {
-            navMenu.classList.toggle('show');
-        });
-    });
-</script>
-
-<script>
-    // Ambil elemen menu icon dan menu list
-    const menuIcon = document.querySelector('.menu-icon');
-    const menuList = document.querySelector('#menu-list');
-
-    // Ketika menu icon diklik, toggle kelas 'show' pada menu list
-    menuIcon.addEventListener('click', () => {
-        menuList.classList.toggle('show');
-    });
-</script>
+// Initial call for fade-in effect
+document.addEventListener("DOMContentLoaded", handleScroll);
