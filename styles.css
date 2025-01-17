@@ -128,6 +128,13 @@ nav ul li {
     padding-top: 20px;
 }
 
+#kontak {
+    background-color: #003366;  /* Warna biru gelap */
+    color: white;  /* Membuat teks berwarna putih agar kontras dengan latar belakang */
+    padding: 20px;  /* Memberikan jarak di sekitar teks */
+    border-radius: 8px;  /* Membuat sudut bagian kontak sedikit melengkung */
+}
+
 .separator {
     border-top: 2px solid #000;  /* Menambahkan garis pemisah */
     margin: 20px 0;  /* Memberikan jarak atas dan bawah */
