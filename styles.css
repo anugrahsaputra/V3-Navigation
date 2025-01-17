@@ -1,190 +1,138 @@
-/* Reset CSS */
-* {
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e0f7e0; /* Latar belakang hijau muda */
-    color: #333;
-    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #4caf50; /* Hijau tua untuk header */
+    background-color: #4CAF50;
     color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
+    padding: 10px 20px;
 }
 
-.marquee-container {
-    background-color: #388e3c; /* Warna hijau lebih gelap untuk marquee */
-    color: white;
-    padding: 10px;
-    overflow: hidden;
-    white-space: nowrap;
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-.marquee-text {
-    display: inline-block;
-    animation: marquee 10s linear infinite;
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
-@keyframes marquee {
-    0% { transform: translate(100%, 0); }
-    100% { transform: translate(-100%, 0); }
+.school-info h1 {
+    margin: 0;
+}
+
+.slogan {
+    font-size: 0.9em;
+    font-style: italic;
 }
 
 nav {
-    background-color: #4caf50; /* Hijau untuk navbar */
-    padding: 10px;
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1;
     text-align: center;
 }
 
-#menu-list {
-    list-style: none;
-    padding: 0;
-}
-
-#menu-list li {
-    display: inline;
-    margin: 0 15px;
-}
-
-#menu-list a {
+nav ul li a {
     color: white;
+    padding: 14px;
     text-decoration: none;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+.menu-icon {
+    display: none;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.marquee-container {
+    background-color: #ffeb3b;
+    text-align: center;
+    padding: 5px;
+}
+
+.marquee-text {
     font-weight: bold;
 }
 
-#menu-list a:hover {
-    text-decoration: underline;
+/* Animations */
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-main {
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-left {
+    animation: fade-in-left 1s ease-out forwards;
+}
+
+.fade-in-right {
+    animation: fade-in-right 1s ease-out forwards;
+}
+
+/* Section styling */
+section {
     padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.bubble {
-    background-color: #a5d6a7; /* Bubble hijau muda */
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.bubble:hover {
-    transform: scale(1.05); /* Efek zoom saat hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-h1, h2 {
-    color: #2e7d32; /* Warna hijau tua untuk judul */
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 2.5em;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-footer {
-    background-color: #4caf50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.social-media {
-    margin-top: 10px;
+.bold-text {
+    font-weight: bold;
 }
 
 .social-media a {
-    color: white;
+    color: #333;
     text-decoration: none;
-    margin: 0 10px;
 }
 
 .social-media a:hover {
     text-decoration: underline;
 }
 
-/* Animasi Fade In */
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.fade-in-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.appear {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Responsiveness */
-@media (max-width: 1200px) {
-    h1 {
-        font-size: 2.2em;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    #menu-list li {
-        margin: 0 10px;
-    }
-}
-
-@media (max-width: 992px) {
-    header {
-        padding: 15px;
-    }
-
-    .bubble {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.6em;
-    }
-
-    #menu-list li {
-        display: block; /* Menampilkan menu secara vertikal pada perangkat kecil */
-        margin: 10px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-
-    .bubble {
-        padding: 
+footer {
+    background-color: #333;
+    color: white
