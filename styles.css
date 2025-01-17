@@ -1,66 +1,53 @@
-ont-weight: bold;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu-icon {
-        align-self: flex-end;
-        margin-right: 10px;
-    }
-
-    #menu-list {
-        width: 100%;
-        position: static;
-        border-radius: 0;
-    }
-
-    .marquee-text {
-        font-size: 12px;
-    }
-
-    main section {
-        margin: 10px;
-    }
+/* Carousel umum */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Menyesuaikan lebar carousel */
+    margin: 20px auto;
+    overflow: hidden;
 }
 
-/* Kontak Kami */
-#kontak {
-    background-color: #003366; /* Warna biru tua */
-    color: white; /* Warna teks putih untuk kontras */
-    padding: 20px;
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#kontak h2 {
-    color: #FFD700; /* Warna emas untuk judul agar lebih menonjol */
+/* Tombol navigasi untuk carousel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
-#kontak p {
-    margin: 10px 0;
+.carousel-button-prev {
+    left: 10px;
 }
 
-/* Social Media Links */
-.social-media a {
-    font-weight: bold; /* Membuat font menjadi tebal */
-    text-decoration: underline; /* Menambahkan garis bawah */
-    color: #FFD700; /* Warna emas untuk teks sosial media */
+.carousel-button-next {
+    right: 10px;
 }
 
-.social-media a:hover {
-    color: #FFFFFF; /* Warna putih saat hover */
-    text-decoration: underline; /* Tetap ada garis bawah */
+/* Agar dua carousel tidak tumpang tindih */
+#carousel-1,
+#carousel-2 {
+    margin-bottom: 40px; /* Jarak antar carousel */
 }
 
-.bold-text {
-    font-weight: bold;
+/* Responsif untuk ukuran layar kecil */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+    }
 }
