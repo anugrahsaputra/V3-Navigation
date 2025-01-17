@@ -8,35 +8,32 @@ function toggleMenu() {
     }
 }
 
-// Carousel functionality
-let currentIndex = 0;
+// Script untuk Carousel 1
+let currentIndex1 = 0;
+const slides1 = document.querySelectorAll("#carousel-1 .carousel-slide img");
+const totalSlides1 = slides1.length;
 
-function showCarousel() {
-    const slides = document.querySelectorAll(".carousel-slide img");
-    slides.forEach((slide, index) => {
-        slide.style.display = index === currentIndex ? "block" : "none";
-    });
+function moveCarousel1() {
+    currentIndex1 = (currentIndex1 + 1) % totalSlides1;
+    const offset = -currentIndex1 * 100;
+    document.querySelector("#carousel-1 .carousel-slide").style.transform = `translateX(${offset}%)`;
 }
 
-function nextSlide() {
-    const slides = document.querySelectorAll(".carousel-slide img");
-    currentIndex = (currentIndex + 1) % slides.length;
-    showCarousel();
+setInterval(moveCarousel1, 3000); // Ganti gambar setiap 3 detik
+
+// Script untuk Carousel 2
+let currentIndex2 = 0;
+const slides2 = document.querySelectorAll("#carousel-2 .carousel-slide img");
+const totalSlides2 = slides2.length;
+
+function moveCarousel2() {
+    currentIndex2 = (currentIndex2 + 1) % totalSlides2;
+    const offset = -currentIndex2 * 100;
+    document.querySelector("#carousel-2 .carousel-slide").style.transform = `translateX(${offset}%)`;
 }
 
-function prevSlide() {
-    const slides = document.querySelectorAll(".carousel-slide img");
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showCarousel();
+setInterval(moveCarousel2, 3000); // Ganti gambar setiap 3 detik
 }
-
-// Automatically switch carousel slides every 3 seconds
-setInterval(nextSlide, 3000);
-
-// Initialize carousel on page load
-document.addEventListener("DOMContentLoaded", () => {
-    showCarousel();
-});
 
 // Scroll animation for fade-in effects
 function handleScroll() {
