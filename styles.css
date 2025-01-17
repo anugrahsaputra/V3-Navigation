@@ -193,8 +193,15 @@ footer {
 /* Menampilkan ikon hamburger pada layar kecil */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* Menampilkan ikon hamburger */
-        top: 140px;
+    display: none; /* Menyembunyikan ikon secara default */
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    position: absolute;
+    left: 20px; /* Memposisikan menu hamburger di kiri */
+    top: 140px; /* Menempatkan menu di bawah slogan */
     }
 
     /* Menyembunyikan daftar menu secara default */
@@ -211,9 +218,9 @@ footer {
     }
 
     /* Ketika menu toggle diaktifkan */
-    #menu-list.show {
-        display: flex;
-    }
+     #menu-list.show {
+        display: flex; /* Menampilkan menu ketika toggle diaktifkan */
+     }
 
     #menu-list li {
         padding: 10px;
