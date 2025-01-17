@@ -14,17 +14,27 @@ header {
 
 .logo-container {
     display: flex;
-    align-items: center;
+    justify-content: center; /* Memusatkan nama dan slogan di tengah */
+    align-items: center; /* Memastikan logo dan teks sejajar secara vertikal */
+    text-align: center; /* Memastikan teks berada di tengah */
+    padding: 20px 0; /* Memberikan sedikit ruang atas dan bawah */
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+     max-width: 100px; /* Mengatur ukuran logo */
+    margin-right: 20px; /* Memberikan jarak antara logo dan teks */
+}
+
+.school-info {
+    display: flex;
+    flex-direction: column; /* Menyusun nama dan slogan secara vertikal */
+    justify-content: center; /* Memusatkan nama dan slogan */
 }
 
 .school-info h1 {
+    font-size: 36px;
     margin: 0;
+    color: #333;
 }
 
 .slogan {
