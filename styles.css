@@ -34,8 +34,8 @@ header h1 {
 
 /* Style for navigation */
 nav {
-    background: #333;
-    color: #fff;
+    background: rgba(128, 128, 128, 0.7); /* Warna abu-abu dengan transparansi */
+    color: black; /* Warna teks default di dalam menu */
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -44,7 +44,7 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 5px;
@@ -52,7 +52,7 @@ nav a {
 }
 
 nav a:hover {
-    background: #007bff;
+    background: rgba(0, 0, 0, 0.1); /* Latar belakang hitam transparan saat hover */
     border-radius: 5px;
 }
 
