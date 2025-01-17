@@ -17,23 +17,26 @@ header {
 .logo-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
+  width: 50px; /* Ukuran logo */
+  height: auto;
+}
+
+.school-info {
+  text-align: right; /* Mengatur teks agar berada di sebelah kanan */
 }
 
 .school-info h1 {
-  margin: 0;
   font-size: 24px;
-  color: white;
+  margin: 0;
 }
 
 .slogan {
-  font-size: 14px;
-  color: white;
+  font-size: 16px;
+  color: #333;
   margin-top: 5px;
 }
 
