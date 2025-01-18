@@ -1,21 +1,44 @@
-// Menambahkan animasi fade-in saat elemen muncul di layar
-window.addEventListener('DOMContentLoaded', () => {
-    const fadeInSections = document.querySelectorAll('.fade-in-section');
+// Script for Toggle Menu
+function toggleMenu() {
+    const menuList = document.getElementById("menu-list");
+    if (menuList.style.display === "flex") {
+        menuList.style.display = "none";
+    } else {
+        menuList.style.display = "flex";
+    }
+}
 
-    const checkVisibility = () => {
-        fadeInSections.forEach(section => {
-            const sectionPosition = section.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2; // 20% lebih rendah dari layar
+// Script for Fade-In Animations
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeInElements = document.querySelectorAll(".fade-in-right, .fade-in-left");
 
-            if (sectionPosition < screenPosition) {
-                section.classList.add('visible');
-            }
-        });
-    };
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
 
-    // Periksa apakah elemen muncul saat pertama kali halaman dimuat
-    checkVisibility();
-
-    // Periksa visibilitas elemen setiap kali halaman digulir
-    window.addEventListener('scroll', checkVisibility);
+    fadeInElements.forEach((element) => {
+        observer.observe(element);
+    });
 });
+
+// Adding 'visible' class to activate fade-in
+const fadeCSS = `
+    .fade-in-right.visible {
+        animation: fadeInRight 1s ease-in-out forwards;
+    }
+    .fade-in-left.visible {
+        animation: fadeInLeft 1s ease-in-out forwards;
+    }
+`;
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = fadeCSS;
+document.head.appendChild(styleSheet);
