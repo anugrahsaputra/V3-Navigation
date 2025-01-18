@@ -14,37 +14,26 @@ header {
 
 .logo-container {
     display: flex;
-    justify-content: flex-start; /* Teks di sebelah kanan, logo di kiri */
-    align-items: center; /* Menyelaraskan elemen secara vertikal */
-    flex-wrap: wrap; /* Membungkus jika elemen terlalu panjang */
+    justify-content: flex-start; /* Memastikan logo dan teks berada di kiri */
+    align-items: center;
     text-align: left;
     padding: 20px 0;
 }
 
- .logo {
-    width: 100px; /* Ukuran logo */
-    height: 100px; /* Tinggi logo */
-    margin-right: 20px; /* Jarak antara logo dan teks */
-    object-fit: contain; /* Memastikan gambar tidak terpotong */
- }
-
-.school-info {
-    display: flex;
-    flex-direction: column; /* Menyusun nama dan slogan secara vertikal */
-    justify-content: center;
-    align-items: flex-start; /* Meluruskan teks ke kiri */
+.logo {
+    margin-right: 15px; /* Memberikan jarak antara logo dan teks */
+    width: 50px; /* Ukuran logo */
 }
 
 .school-info h1 {
-    font-size: 36px; /* Ukuran teks nama sekolah */
+    font-size: 36px;
     margin: 0;
     color: #333;
 }
 
 .slogan {
-    font-size: 18px; /* Ukuran teks slogan */
+    font-size: 0.9em;
     font-style: italic;
-    color: #555;
 }
 
 nav {
@@ -75,102 +64,13 @@ nav ul li a:hover {
     background-color: #575757;
 }
 
-.menu-icon {
-    display: none;
-    background-color: #333;
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.marquee-container {
-    background-color: #ffeb3b;
-    text-align: center;
-    padding: 5px;
-}
-
-.marquee-text {
-    font-weight: bold;
-}
-
-/* Animations */
-@keyframes fade-in-left {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fade-in-right {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.fade-in-left {
-    animation: fade-in-left 1s ease-out forwards;
-}
-
-.fade-in-right {
-    animation: fade-in-right 1s ease-out forwards;
-}
-
-/* Section styling */
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.bold-text {
-    font-weight: bold;
-}
-
-.social-media a {
-    color: #333;
-    text-decoration: none;
-}
-
-.social-media a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    background-color: #333;
-    color: white
-}
-
-/* Animasi marquee */
-@keyframes marquee-animation {
-    0% {
-        transform: translateX(100%); /* Mulai di luar kanan */
-    }
-    100% {
-        transform: translateX(-100%); /* Pindah ke luar kiri */
-    }
-}
-
 /* Marquee container */
 .marquee-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: #D3D3D3; /* Warna abu-abu */
-    padding: 10px 0; /* Menambahkan sedikit padding */
-}
+    background-color: #D3D3D3;
+    padding: 10px 0;
 }
 
 /* Marquee text style */
@@ -183,50 +83,53 @@ footer {
     font-weight: bold;
 }
 
-/* Gaya untuk ikon menu hamburger (garis tiga) */
-.menu-icon {
-    display: none; /* Menyembunyikan ikon hamburger di layar besar */
-    font-size: 30px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #333;
-    position: absolute;
-    left: 20px;
-    top: 140px;
+/* Animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-/* Menampilkan ikon hamburger pada layar kecil */
+.fade-in-section {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+}
+
+/* Responsif untuk menu pada layar kecil */
 @media (max-width: 768px) {
+    /* Menu toggle */
     .menu-icon {
-    display: none; /* Menyembunyikan ikon secara default */
-    font-size: 30px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #333;
-    position: absolute;
-    left: 20px; /* Memposisikan menu hamburger di kiri */
-    top: 140px; /* Menempatkan menu di bawah slogan */
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #333;
+        position: absolute;
+        left: 20px;
+        top: 140px;
     }
 
-    /* Menyembunyikan daftar menu secara default */
     #menu-list {
         display: none;
         flex-direction: column;
-        align-items: flex-start;
         position: absolute;
-        top: 60px; /* Menempatkan menu di bawah navbar */
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: #fff;
-        border-top: 1px solid #ddd;
     }
 
-    /* Ketika menu toggle diaktifkan */
-     #menu-list.show {
-        display: flex; /* Menampilkan menu ketika toggle diaktifkan */
-     }
+    #menu-list.show {
+        display: flex;
+    }
 
     #menu-list li {
         padding: 10px;
@@ -237,33 +140,9 @@ footer {
         display: block;
         padding: 10px;
         color: #333;
-        text-decoration: none;
     }
 
     #menu-list li a:hover {
         background-color: #f0f0f0;
     }
-}
-
-/* Gaya untuk menu yang tidak terpengaruh di layar besar */
-@media (min-width: 769px) {
-    #menu-list {
-        display: flex;
-        justify-content: center;
-        margin: 0;
     }
-
-    #menu-list li {
-        margin: 0 15px;
-    }
-
-    #menu-list li a {
-        padding: 10px;
-        color: #333;
-        text-decoration: none;
-    }
-
-    #menu-list li a:hover {
-        background-color: #f0f0f0;
-    }
-
