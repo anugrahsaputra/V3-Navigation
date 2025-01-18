@@ -1,33 +1,54 @@
-// Fungsi untuk men-toggle menu navigasi
+// Script for Toggle Menu
 function toggleMenu() {
-    const menuList = document.getElementById('menu-list');
-    menuList.classList.toggle('active');
+    const menuList = document.getElementById("menu-list");
+    if (menuList.style.display === "flex") {
+        menuList.style.display = "none";
+    } else {
+        menuList.style.display = "flex";
+    }
 }
 
-// Fungsi untuk memeriksa apakah elemen berada di viewport
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+// Script for Fade-In Animations
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeInElements = document.querySelectorAll(".fade-in-right, .fade-in-left");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
     );
-}
 
-// Fungsi untuk menambahkan kelas visible pada elemen yang terlihat di viewport
-function checkFadeInElements() {
-    const fadeInElements = document.querySelectorAll('.fade-in');
-    fadeInElements.forEach((el) => {
-        if (isElementInViewport(el)) {
-            el.classList.add('visible');
-        }
+    fadeInElements.forEach((element) => {
+        observer.observe(element);
     });
-}
+});
 
-// Memeriksa elemen saat menggulir dan saat halaman dimuat
-window.addEventListener('scroll', checkFadeInElements);
-window.addEventListener('load', checkFadeInElements);
+// Adding 'visible' class to activate fade-in
+const fadeCSS = `
+    .fade-in-right.visible {
+        animation: fadeInRight 1s ease-in-out forwards;
+    }
+    .fade-in-left.visible {
+        animation: fadeInLeft 1s ease-in-out forwards;
+    }
+`;
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = fadeCSS;
+document.head.appendChild(styleSheet);
 
-// Pemeriksaan awal
-checkFadeInElements();
+// Script to close the menu when clicking on a menu item
+const menuItems = document.querySelectorAll("#menu-list a");
+
+menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const menuList = document.getElementById("menu-list");
+        menuList.style.display = "none"; // Hide the menu when a link is clicked
+    });
+});

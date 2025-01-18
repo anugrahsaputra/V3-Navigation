@@ -1,206 +1,283 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    background: #f4f4f4;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
 }
 
 .logo-container {
     display: flex;
-    align-items: center; /* Menjaga logo dan teks sejajar secara vertikal */
-    justify-content: flex-start; /* Logo di kiri */
-    padding: 20px; /* Tambahkan padding jika diperlukan */
+    align-items: center;
 }
 
 .logo {
-    width: 100px;
-    height: auto;
-}
-
-.school-info {
-    margin-left: 20px; /* Jarak antara logo dan informasi sekolah */
-    display: flex;
-    flex-direction: column; /* Mengatur teks dalam kolom */
-    justify-content: center; /* Menjaga teks di tengah secara vertikal */
-    align-items: center; /* Memusatkan teks secara horizontal */
-    text-align: center; /* Memastikan teks berada di tengah */
-}
-
-@keyframes scale-fade {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    height: 80px;
+    margin-right: 20px;
 }
 
 .school-info h1 {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
     margin: 0;
-    color: black; /* Mengubah warna teks menjadi hitam */
-    font-weight: bold; /* Membuat teks menjadi bold */
-    animation: scale-fade 0.8s ease-out; /* Menambahkan animasi */
 }
 
-.slogan {
-    font-style: italic;
+.school-info .slogan {
+    font-size: 14px;
+    color: #555;
 }
 
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    margin-top: 20px; /* Memberikan jarak agar tidak menutupi navbar */
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Navigation Bar */
 nav {
     background: #333;
-    color: white;
-    padding: 10px 0;
-}
-
-#navbar {
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.menu-icon {
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#menu-list li {
+    margin: 0 10px;
+}
+
+#menu-list a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+#menu-list a:hover {
+    background: #575757;
+    border-radius: 4px;
+}
+
 .marquee-container {
+    flex: 1;
     overflow: hidden;
     white-space: nowrap;
 }
 
 .marquee-text {
-    display: inline-block;
-    padding: 10px;
-    animation: marquee 10s linear infinite;
+    animation: marquee 15s linear infinite;
+    color: #fff;
 }
 
 @keyframes marquee {
-    0% { transform: translate(100%, 0); }
-    100% { transform: translate(-100%, 0); }
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
-.menu-icon {
-    display: none; /* Sembunyikan ikon menu di desktop */
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-}
-
-/* Menu List */
-#menu-list {
-    list-style: none;
-    display: flex;
-}
-
-#menu-list li {
-    margin: 0 15px;
-}
-
-#menu-list a {
-    color: white;
-    text-decoration: none;
-}
-
-#menu-list a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content */
+/* Sections */
 main {
     padding: 20px;
 }
 
 section {
-    margin-bottom: 20px;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-/* Fade-in effects */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Bubble effect */
-.bubble {
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    padding: 15px;
-    transition: transform 0.3s;
-}
-
-.bubble:hover {
-    transform: scale(1.05);
-}
-
-.bold-text {
+h2 {
+    color: green;
     font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
+p {
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Bubbles for Content */
+.bubble {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Profil Section */
+#profil img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Ekstrakurikuler Gallery */
 .gallery {
     display: flex;
-    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .gallery img {
-    width: 100px;
-    height: auto;
-    margin: 5px;
+    width: calc(20% - 10px);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Contact Section */
+#kontak {
+    background: #00264d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#kontak a {
+    color: #0fcf71;
+    text-decoration: none;
+}
+
+#kontak a:hover {
+    text-decoration: underline;
+}
+
+/* Fade-In Animations */
+.fade-in-right {
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px 0;
     background: #333;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
-/* Media Queries */
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* Tampilkan ikon menu di perangkat mobile */
+        display: block;
     }
 
     #menu-list {
         display: none;
         flex-direction: column;
-        background: #333;
+        width: 100%;
         position: absolute;
-        top: 50px;
-        right: 0;
-        width: 200px;
-    }
-
-    #menu-list.active {
-        display: flex; /* Tampilkan menu saat aktif */
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        text-align: center;
     }
 
     #menu-list li {
         margin: 10px 0;
+    }
+
+    #navbar.active ul {
+        display: flex;
     }
     }
