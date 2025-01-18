@@ -1,168 +1,217 @@
-/* Basic styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background: #f4f4f4;
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
 }
 
 .logo-container {
     display: flex;
-    justify-content: flex-start; /* Memastikan logo dan teks berada di kiri */
     align-items: center;
-    text-align: left;
-    padding: 20px 0;
 }
 
 .logo {
-    margin-right: 15px; /* Memberikan jarak antara logo dan teks */
-    width: 50px; /* Ukuran logo */
+    height: 80px;
+    margin-right: 20px;
 }
 
 .school-info h1 {
-    font-size: 36px;
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
     margin: 0;
-    color: #333;
 }
 
-.slogan {
-    font-size: 0.9em;
-    font-style: italic;
+.school-info .slogan {
+    font-size: 14px;
+    color: #555;
 }
 
+/* Navigation Bar */
 nav {
-    background-color: #333;
-    overflow: hidden;
+    background: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
+.menu-icon {
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-list {
+    list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
 }
 
-nav ul li {
-    flex: 1;
-    text-align: center;
+#menu-list li {
+    margin: 0 10px;
 }
 
-nav ul li a {
-    color: white;
-    padding: 14px;
+#menu-list a {
+    color: #fff;
     text-decoration: none;
-    display: block;
+    padding: 5px 10px;
+    transition: background 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #575757;
+#menu-list a:hover {
+    background: #575757;
+    border-radius: 4px;
 }
 
-/* Marquee container */
 .marquee-container {
-    width: 100%;
+    flex: 1;
     overflow: hidden;
-    position: relative;
-    background-color: #D3D3D3;
-    padding: 10px 0;
-}
-
-/* Marquee text style */
-.marquee-text {
-    display: inline-block;
     white-space: nowrap;
-    animation: marquee-animation 15s linear infinite;
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
 }
 
-/* Animasi fade-in */
-@keyframes fadeIn {
+.marquee-text {
+    animation: marquee 15s linear infinite;
+    color: #fff;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Sections */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: green;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Bubbles for Content */
+.bubble {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Profil Section */
+#profil img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Ekstrakurikuler Gallery */
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: calc(20% - 10px);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#kontak {
+    background: #00264d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#kontak a {
+    color: #0fcf71;
+    text-decoration: none;
+}
+
+#kontak a:hover {
+    text-decoration: underline;
+}
+
+/* Fade-In Animations */
+.fade-in-right {
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
     from {
         opacity: 0;
+        transform: translateX(50px);
     }
     to {
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
-.fade-in-section {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-
-.fade-in-section.visible {
-    opacity: 1;
-}
-
-/* Responsif untuk menu pada layar kecil */
-@media (max-width: 768px) {
-    /* Menu toggle */
-    .menu-icon {
-        display: block;
-        font-size: 30px;
-        cursor: pointer;
-        background: none;
-        border: none;
-        color: #333;
-        position: absolute;
-        left: 20px;
-        top: 140px;
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
-
-    #menu-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-    }
-
-    #menu-list.show {
-        display: flex;
-    }
-
-    #menu-list li {
-        padding: 10px;
-        width: 100%;
-    }
-
-    #menu-list li a {
-        display: block;
-        padding: 10px;
-        color: #333;
-    }
-
-    #menu-list li a:hover {
-        background-color: #f0f0f0;
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-/* Membuat teks bergerak dari kanan ke kiri */
-@keyframes marquee-animation {
-    0% {
-        transform: translateX(100%); /* Mulai dari luar kanan */
+/* Footer */
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 20px;
     }
-    100% {
-        transform: translateX(-100%); /* Bergerak ke luar kiri */
-    }
-}
-
-/* Membuat teks bergerak dari kiri ke kanan */
-@keyframes marquee-animation {
-    0% {
-        transform: translateX(-100%); /* Mulai dari luar kiri */
-    }
-    100% {
-        transform: translateX(100%); /* Bergerak ke luar kanan */
-    }
-}
