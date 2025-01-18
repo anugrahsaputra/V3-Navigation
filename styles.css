@@ -145,4 +145,24 @@ nav ul li a:hover {
     #menu-list li a:hover {
         background-color: #f0f0f0;
     }
+}
+
+/* Membuat teks bergerak dari kanan ke kiri */
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(100%); /* Mulai dari luar kanan */
     }
+    100% {
+        transform: translateX(-100%); /* Bergerak ke luar kiri */
+    }
+}
+
+/* Membuat teks bergerak dari kiri ke kanan */
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(-100%); /* Mulai dari luar kiri */
+    }
+    100% {
+        transform: translateX(100%); /* Bergerak ke luar kanan */
+    }
+}
