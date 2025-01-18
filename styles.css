@@ -36,6 +36,46 @@ header {
     color: #555;
 }
 
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    margin-top: 20px; /* Memberikan jarak agar tidak menutupi navbar */
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
 /* Navigation Bar */
 nav {
     background: #333;
@@ -214,4 +254,30 @@ footer {
     padding: 10px 0;
     font-size: 14px;
     margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        text-align: center;
+    }
+
+    #menu-list li {
+        margin: 10px 0;
+    }
+
+    #navbar.active ul {
+        display: flex;
+    }
     }
