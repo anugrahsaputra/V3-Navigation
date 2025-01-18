@@ -17,21 +17,21 @@ header {
     justify-content: center; /* Memusatkan elemen */
     align-items: center; /* Menyelaraskan secara vertikal */
     flex-wrap: wrap; /* Membungkus jika ada elemen besar */
-    text-align: center;
+    text-align: left;
     padding: 20px 0;
 }
 
  .logo {
-         width: 80px; /* Atur ukuran logo */
-    height: 80px; /* Atur tinggi logo */
-    margin-right: 20px; /* Memberikan jarak antara logo dan teks */
+    width: 80px; /* Ukuran logo */
+    height: 80px;
  }
 
 .school-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Menyusun nama dan slogan secara vertikal */
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Meluruskan teks ke kiri */
+    margin-right: 20px; /* Memberikan jarak antara teks dan logo */
 }
 
 .school-info h1 {
