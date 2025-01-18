@@ -42,3 +42,13 @@ const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = fadeCSS;
 document.head.appendChild(styleSheet);
+
+// Script to close the menu when clicking on a menu item
+const menuItems = document.querySelectorAll("#menu-list a");
+
+menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const menuList = document.getElementById("menu-list");
+        menuList.style.display = "none"; // Hide the menu when a link is clicked
+    });
+});
