@@ -13,17 +13,19 @@ header {
 }
 
 .logo-container {
-     display: flex;
-    justify-content: center; /* Memusatkan elemen */
-    align-items: center; /* Menyelaraskan secara vertikal */
-    flex-wrap: wrap; /* Membungkus jika ada elemen besar */
+    display: flex;
+    justify-content: flex-start; /* Teks di sebelah kanan, logo di kiri */
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+    flex-wrap: wrap; /* Membungkus jika elemen terlalu panjang */
     text-align: left;
     padding: 20px 0;
 }
 
  .logo {
-    width: 80px; /* Ukuran logo */
-    height: 80px;
+    width: 100px; /* Ukuran logo */
+    height: 100px; /* Tinggi logo */
+    margin-right: 20px; /* Jarak antara logo dan teks */
+    object-fit: contain; /* Memastikan gambar tidak terpotong */
  }
 
 .school-info {
@@ -31,7 +33,6 @@ header {
     flex-direction: column; /* Menyusun nama dan slogan secara vertikal */
     justify-content: center;
     align-items: flex-start; /* Meluruskan teks ke kiri */
-    margin-right: 20px; /* Memberikan jarak antara teks dan logo */
 }
 
 .school-info h1 {
