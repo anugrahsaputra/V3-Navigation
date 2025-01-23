@@ -87,14 +87,13 @@ header {
 nav {
     background: #333;
     color: #fff;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1000;
     padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
 .menu-icon {
@@ -130,13 +129,9 @@ nav {
 }
 
 .marquee-container {
-    position: fixed;
-    top: 60px;
-    width: 100%;
-    background-color: #444;
-    padding: 10px 0;
-    z-index: 999; 
+    flex: 1;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .marquee-text {
