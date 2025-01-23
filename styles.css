@@ -87,13 +87,14 @@ header {
 nav {
     background: #333;
     color: #fff;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .menu-icon {
