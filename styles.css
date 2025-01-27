@@ -288,3 +288,42 @@ footer {
         display: flex;
     }
     }
+
+    /* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Slider Image */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+/* Indicator Slider */
+.indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.line {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+
+.active {
+    background: black;
+}
